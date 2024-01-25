@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Template</title>
+</head>
+<body>
+    <h1>My Items</h1>
+    
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Item</button>
+    </form>
+
+    <ul>
+        {% for obj in my_model_objects %}
+            <li>Name: {{ obj.name }}, SKU: {{ obj.sku }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
